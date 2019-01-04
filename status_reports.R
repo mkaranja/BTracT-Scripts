@@ -18,12 +18,11 @@ filter.status.date = filter(filter.status, sdate==today)
 if(dim(filter.status.date)[1]>0){
   write.csv(filter.status.date, file = "status_report.csv", row.names=F)
 
-send.mail(from = "bananatrackertool@gmail.com",
-          to =c("a.brown@cgiar.org","tm.shah@cgiar.org","m.karanja@cgiar.org"),
-#	  to = ("m.karanja@cgiar.org"), 
+send.mail(from = "****@gmail.com",
+          to =c("****","****"),
           subject = paste("Arusha status report - ",Sys.time()),
           body =  paste("Attached is a list of accessions whose status was reported today - ", Sys.time()),
-          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "bananatrackertool@gmail.com", passwd = "Btract101", ssl = TRUE),
+          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "email3@gmail.com", passwd = "*****", ssl = TRUE),
           authenticate = TRUE,
           send = TRUE,
           attach.files = "/srv/shiny-server/btract/btract/data/status_report.csv",
