@@ -5,7 +5,6 @@ library(dplyr)
 library(lubridate)
 library(mailR)
 setwd("/srv/shiny-server/btract/btract/data")
-#setwd("D:\\BANANA PIPELINE\\REVISED_BTRACT\\NewBTracT\\data")
 #------------------------------------------------------------------------------------------------------
 bananadata <- read.csv("ArushaBananaData.csv")
 todate <- Sys.Date()-1 # last day of the month
@@ -81,12 +80,11 @@ monthly_report <- dplyr::filter(monthly_report, monthly_report[,2]>0)
 write.csv(monthly_report, file <- paste0("BTracT Monthly Report ", month.abb[month(todate)],"-",year(todate),".csv"), row.names = F)
   
 # --------- email
-send.mail(from = "bananatrackertool@gmail.com",
-            to = c("a.brown@cgiar.org", "tm.shah@cgiar.org","m.karanja@cgiar.org"),
-#	   to = "m.karanja@cgiar.org", 
-           subject = paste("BTracT Monthly report for ", month.abb[month(todate)],"-",year(todate)),
+send.mail(from = "******",
+            to = c("*****"),
+            subject = paste("BTracT Monthly report for ", month.abb[month(todate)],"-",year(todate)),
             body = paste("Attached is the monthly report for ", month.abb[month(todate)],"-",year(todate)), 
-            smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "bananatrackertool@gmail.com", passwd = "Btract101", ssl = TRUE),
+            smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "*****", passwd = "*****", ssl = TRUE),
             authenticate = TRUE,
             send = TRUE,
             attach.files = paste0("/srv/shiny-server/btract/btract/data/BTracT Monthly Report ", month.abb[month(todate)],"-",year(todate),".csv"),
