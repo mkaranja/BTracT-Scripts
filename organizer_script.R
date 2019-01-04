@@ -1,7 +1,7 @@
 cat("\014")
 rm(list=ls(all=T))
-#setwd("/srv/shiny-server/btract/btract/data")
-setwd("C:/Users/Margaret/Dropbox/BTracTDashboard/data")
+setwd("/srv/shiny-server/btract/btract/data")
+
 # LOAD REQUIRED PACKAGES
 # function
 ipak <- function(pkg){
@@ -986,7 +986,7 @@ saveRDS(contamination, file = "ArushaContamination.rds")
 
 # POST MEDIA FILES TO ONA
 # Get tokens
-raw.result <- GET("https://api.ona.io/api/v1/user.json", authenticate(user = "seedtracker",password = "Seedtracking101"))
+raw.result <- GET("https://api.ona.io/api/v1/user.json", authenticate(user = "*****",password = "******"))
 raw.result.char<-rawToChar(raw.result$content)
 raw.result.json<-fromJSON(raw.result.char)
 TOKEN_KEY <- raw.result.json$temp_token
