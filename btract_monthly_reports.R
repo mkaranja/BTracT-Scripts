@@ -352,7 +352,7 @@ for(k in 1:length(loc)){
 }
 
 # --------- email
-send.mail(from = "bananatrackertool@gmail.com",
+send.mail(from = "****@gmail.com",
             to = "*****@**.com", 
             subject = paste("BTracT Monthly Report - Arusha ", month.abb[lubridate::month(Sys.Date()-1)],"-",lubridate::year(Sys.Date()-1)),
             body = paste("Attached is the Arusha monthly report for ", month.abb[lubridate::month(Sys.Date()-1)],"-",lubridate::year(Sys.Date()-1)), 
