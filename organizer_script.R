@@ -17,7 +17,7 @@ ipak(packages)
 library(ona)
 
 ## Get data from ona
-banana = onaDownload("formID","ona_account_name","username","passwd")
+banana = onaDownload("formID","ona_account_name","username","passwd") # contact admin
 site = dplyr::select(banana, ends_with("Location")) %>%
   tidyr::gather(area, site, ends_with("Location"), na.rm=T)
 
